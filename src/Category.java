@@ -10,7 +10,13 @@ package yahtzee;
  * @author moonp
  */
 public class Category {
-    
+
+    /*
+    TODO:
+    1. Determines which categories have not been used yet.
+    2. Determine eligibility of category according to dice rolled.
+    3. Mark categories as either used or not used.
+    */
     
     public static void /*boolean*/ checkForYahtzee (int [] dieArray){
         boolean yahtzee = true;
@@ -33,35 +39,7 @@ public class Category {
     // NOTE: Could delete yahtzee method and merge it into below method, since 
     // HashMap can check for a value of 5.
     public static void /*boolean*/ numOfAKind(int [] dieArray){
-        //Compare elements of dieArray to each other.
-        /*int same = 0;
-        for (int position = 0; position < dieArray.length; position++){
-            for (int positionValue = position + 1; positionValue < dieArray.length; positionValue++){
-                if (dieArray[position] == dieArray[positionValue]){
-                    //int knownPair = positionValue;
-                    //System.out.println("\n" + positionValue);
-                    //if (){
-                    same++;
-                    
-                    //}
-                }
-            }
-        }
-        
-        switch (same) {
-            case 3:
-                System.out.println("\nThree of a kind!");
-                break;
-            case 4:
-                System.out.println("\nFour of a kind!");
-                break;
-            case 5:
-                System.out.println("\nFive of a kind!");
-                break;
-            default:
-                break;
-        */
-        //}
+    
         int twoOfAKind = 2;
         int threeOfAKind = 3;
         int fourOfAKind = 4;
@@ -92,11 +70,9 @@ public class Category {
                 System.out.println("\nThree of a Kind!");
             } else if (mapEntry.getValue().equals(fourOfAKind)){
                 System.out.println("\nFour of a Kind!");
-            } else if (mapEntry.getValue().equals(threeOfAKind)
-                    && mapEntry.getValue().equals(twoOfAKind)){
-                System.out.println("\nFull House!");
             }
             /*
+            // Testing
             System.out.println(mapEntry.getKey() + ": " );
             System.out.print(mapEntry.getValue());
             */
@@ -107,10 +83,4 @@ public class Category {
         //System.out.println("Element Count: " + elementCountMap);
         
     }// numOfAKind
-    
-    /*
-    1. Determines which categories have not been used yet.
-    2. Determine eligibility of category according to dice rolled.
-    3. Mark categories as either used or not used.
-    */
 }
