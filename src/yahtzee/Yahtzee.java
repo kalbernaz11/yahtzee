@@ -2,7 +2,6 @@ package yahtzee;
 
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -18,7 +17,7 @@ public class Yahtzee {
         Scanner reader = new Scanner(System.in);
         
         boolean keepPlaying = true;
-        boolean validation = true;
+        boolean validation;
         
         int[] dieArray;
         dieArray = new int[5];
@@ -43,11 +42,12 @@ public class Yahtzee {
                 checkForYahtzee(dieArray);
                 numOfAKind(dieArray);
                 
-                try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException ex) {
-                        Thread.currentThread().interrupt();
-                    }
+                // Used for testing purposes...
+                //try {
+                //        Thread.sleep(1000);
+                //    } catch (InterruptedException ex) {
+                //        Thread.currentThread().interrupt();
+                //    }
             }
             
             while (validation == true){
@@ -90,39 +90,11 @@ public class Yahtzee {
     // NOTE: Could delete yahtzee method and merge it into below method, since 
     // HashMap can check for a value of 5.
     public static void /*boolean*/ numOfAKind(int [] dieArray){
-        //Compare elements of dieArray to each other.
-        /*int same = 0;
-        for (int position = 0; position < dieArray.length; position++){
-            for (int positionValue = position + 1; positionValue < dieArray.length; positionValue++){
-                if (dieArray[position] == dieArray[positionValue]){
-                    //int knownPair = positionValue;
-                    //System.out.println("\n" + positionValue);
-                    //if (){
-                    same++;
-                    
-                    //}
-                }
-            }
-        }
         
-        switch (same) {
-            case 3:
-                System.out.println("\nThree of a kind!");
-                break;
-            case 4:
-                System.out.println("\nFour of a kind!");
-                break;
-            case 5:
-                System.out.println("\nFive of a kind!");
-                break;
-            default:
-                break;
-        */
-        //}
         int twoOfAKind = 2;
         int threeOfAKind = 3;
         int fourOfAKind = 4;
-        HashMap<Integer, Integer> elementCountMap = new HashMap<Integer, Integer>(); 
+        HashMap<Integer, Integer> elementCountMap = new HashMap<>(); 
         
         // Check every element in dieArray.
         for (int position: dieArray){
@@ -153,19 +125,8 @@ public class Yahtzee {
                     && mapEntry.getValue().equals(twoOfAKind)){
                 System.out.println("\nFull House!");
             }
-            /*
-            System.out.println(mapEntry.getKey() + ": " );
-            System.out.print(mapEntry.getValue());
-            */
         }
         
-        // Testing
-        //System.out.println("\nDie Array: " + Arrays.toString(dieArray));
-        //System.out.println("Element Count: " + elementCountMap);
-        
     }// numOfAKind
-    
-    //public static boolean fourOfAKind(){}
-    //public static boolean fiveOfAKind(){}
     
 }// class Yahtzee
