@@ -44,7 +44,7 @@ public class Yahtzee {
                 numOfAKind(dieArray);
                 
                 try {
-                        Thread.sleep(4000);
+                        Thread.sleep(1000);
                     } catch (InterruptedException ex) {
                         Thread.currentThread().interrupt();
                     }
@@ -61,7 +61,7 @@ public class Yahtzee {
                 } else if (userInputKeepPlaying.equalsIgnoreCase("n") || userInputKeepPlaying.equalsIgnoreCase("no")){
                     keepPlaying = false;
                     validation = false;
-                    System.out.println("\nThank your for playing!");
+                    System.out.println("\nThank you for playing!");
                 } else {
                     System.out.println("\nThat is not a valid entry. Please try again.");
                 }
